@@ -70,6 +70,7 @@ public class AddSlicesController {
                 slice.setId(id++);
 
                 if (saveSlice){
+                    slices.setText("");
                     isSaved.setText("Saved");
                 }else
                     isSaved.setText("Failed");
