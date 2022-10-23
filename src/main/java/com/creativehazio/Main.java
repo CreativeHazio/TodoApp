@@ -72,7 +72,6 @@ public class Main {
         //TODO: 1.  One database to manage both UserTable and SlicesTable
         // 2. Each user have their own SliceTable
         // 3. Find a way to save all my previous todos in a listview to be accessed later
-        //1. Add a loading label when a user sign up or login
         // 2. Add tests for fields not to be null
 
     }
