@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="403.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.creativehazio.controller.LoginController">
+   <children>
+      <AnchorPane layoutX="11.0" layoutY="56.0" prefHeight="336.0" prefWidth="576.0" style="-fx-background-color: white; -fx-background-radius: 30;">
+         <children>
+            <Label alignment="CENTER" layoutX="267.0" layoutY="25.0" prefHeight="17.0" prefWidth="69.0" text="Login" textFill="#110d01">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="loginUsername" focusTraversable="false" layoutX="118.0" layoutY="93.0" prefHeight="25.0" prefWidth="372.0" promptText="Username" style="-fx-background-color: white;">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="loginPassword" focusTraversable="false" layoutX="118.0" layoutY="167.0" prefHeight="25.0" prefWidth="372.0" promptText="Password" style="-fx-background-color: white;">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </PasswordField>
+            <Button fx:id="loginButton" layoutX="208.0" layoutY="233.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="191.0" style="-fx-background-color: #514c49; -fx-background-radius: 10;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="13.0" />
+               </font>
+            </Button>
+            <Line endX="269.0" layoutX="221.0" layoutY="120.0" startX="-94.0" stroke="#ffbb00" />
+            <Line endX="269.0" layoutX="220.0" layoutY="193.0" startX="-94.0" stroke="#ffbb00" />
+            <Label fx:id="loginLabel" layoutX="258.0" layoutY="293.0" prefHeight="19.0" prefWidth="110.0">
+               <font>
+                  <Font name="Comic Sans MS" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="228.0" layoutY="9.0" prefHeight="17.0" prefWidth="121.0" text="ORANGE" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="28.0" />
+         </font>
+      </Label>
+      <Button fx:id="SignUpButton" alignment="CENTER" layoutX="500.0" layoutY="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: c27400; -fx-background-radius: 5;" text="Sign Up" textFill="WHITE" />
+      <Circle layoutX="196.0" layoutY="30.0" radius="19.0" stroke="#d08400" strokeType="INSIDE">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8156862854957581" green="0.5176470875740051" blue="0.003921568859368563" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Circle>
+   </children>
+</AnchorPane>

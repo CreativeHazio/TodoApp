@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.creativehazio.controller.DatabaseSetupController">
+   <children>
+      <Label alignment="TOP_CENTER" layoutX="28.0" layoutY="64.0" prefHeight="103.0" prefWidth="539.0" text="            WELCOME TO ORANGE&#10;                TO GET STARTED &#10;  ENTER IN YOUR MySQL USERNAME &#10;                AND PASSWORD&#10;">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="1.0" prefHeight="48.0" prefWidth="600.0" style="-fx-background-color: orange;">
+         <children>
+            <Button fx:id="backToSignUp" layoutX="492.0" layoutY="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #944200; -fx-background-radius: 9;" text="Sign Up" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+      <TextField fx:id="mysqlUsername" focusTraversable="false" layoutX="35.0" layoutY="230.0" prefHeight="25.0" prefWidth="276.0" promptText="MySQL UserName e.g root" />
+      <PasswordField fx:id="mysqlPassword" focusTraversable="false" layoutX="35.0" layoutY="271.0" prefHeight="25.0" prefWidth="276.0" promptText="Password" />
+      <Button fx:id="connectToDBbutton" layoutX="139.0" layoutY="311.0" mnemonicParsing="false" style="-fx-background-radius: 10;" text="Connect">
+         <font>
+            <Font name="Comic Sans MS" size="13.0" />
+         </font>
+      </Button>
+      <TextField fx:id="mysqlURL" focusTraversable="false" layoutX="35.0" layoutY="191.0" prefHeight="25.0" prefWidth="276.0" promptText="MySQL URL" />
+      <Separator focusTraversable="false" layoutX="329.0" layoutY="173.0" orientation="VERTICAL" prefHeight="162.0" prefWidth="2.0" style="-fx-background-color: orange;" />
+      <Button fx:id="connectWithDatabaseID" layoutX="438.0" layoutY="307.0" mnemonicParsing="false" style="-fx-background-radius: 10;" text="Connect" />
+      <PasswordField fx:id="databaseID" layoutX="380.0" layoutY="263.0" prefHeight="25.0" prefWidth="179.0" promptText="Enter database ID" />
+      <Label fx:id="databaseIDLabel" layoutX="40.0" layoutY="354.0" prefHeight="17.0" prefWidth="256.0" />
+      <Label fx:id="databaseIDisSuccess" layoutX="397.0" layoutY="354.0" prefHeight="17.0" prefWidth="163.0" />
+   </children>
+</AnchorPane>
