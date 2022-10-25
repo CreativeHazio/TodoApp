@@ -90,5 +90,10 @@
             <Font name="Comic Sans MS" size="14.0" />
          </font>
       </Button>
+      <Button fx:id="howToUse" layoutX="258.0" layoutY="9.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="92.0" style="-fx-background-radius: 10; -fx-background-color: #b56400;" text="How to use" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

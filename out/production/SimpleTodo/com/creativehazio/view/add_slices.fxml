@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.RadialGradient?>
-<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.Arc?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-
 <AnchorPane fx:id="rootAnchorPane" prefHeight="650.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.creativehazio.controller.AddSlicesController">
    <children>
       <AnchorPane layoutY="45.0" prefHeight="605.0" prefWidth="600.0" style="-fx-background-color: #dddbdb;">
@@ -21,15 +15,19 @@
             <Line endX="-100.0" endY="45.0" fill="WHITE" layoutX="643.0" layoutY="514.0" startX="-100.0" startY="3.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="6.5" />
             <Line endX="-136.0" endY="7.0" layoutX="661.0" layoutY="530.0" startX="-98.0" startY="7.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="6.5" />
             <Button fx:id="addSlice" layoutX="512.0" layoutY="521.0" mnemonicParsing="false" opacity="0.0" prefHeight="33.0" prefWidth="61.0" />
-            <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="488.0" prefWidth="600.0" vbarPolicy="NEVER">
+            <ScrollPane focusTraversable="false" hbarPolicy="NEVER" layoutY="49.0" prefHeight="439.0" prefWidth="600.0" vbarPolicy="NEVER">
                <content>
-                  <TextArea fx:id="slices" focusTraversable="false" prefHeight="485.0" prefWidth="598.0" wrapText="true">
+                  <TextArea fx:id="slices" focusTraversable="false" prefHeight="486.0" prefWidth="598.0" promptText="Contents:" wrapText="true">
                      <font>
                         <Font size="20.0" />
                      </font></TextArea>
                </content>
             </ScrollPane>
             <Label fx:id="isSaved" layoutX="424.0" layoutY="532.0" prefHeight="17.0" prefWidth="68.0" />
+            <TextArea fx:id="title" layoutY="6.0" prefHeight="34.0" prefWidth="600.0" promptText="TITLE:">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></TextArea>
          </children>
       </AnchorPane>
       <Label layoutX="83.0" layoutY="5.0" prefHeight="25.0" prefWidth="68.0" text="Slices" textFill="WHITE">

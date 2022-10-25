@@ -3,7 +3,6 @@ package com.creativehazio.controller;
 import com.creativehazio.user.User;
 import com.creativehazio.user.UserDAOInterface;
 import com.creativehazio.user.UserDatabase;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -26,6 +25,7 @@ public class SignUpController{
     private Stage stage;
 
     private UserDAOInterface udb;
+    private LoginController loginController;
 
     @FXML
     private ResourceBundle resources;
@@ -41,6 +41,9 @@ public class SignUpController{
 
     @FXML
     private Button signUpButton;
+
+    @FXML
+    private Button howToUse;
 
     @FXML
     private TextField signUpFirstname;
@@ -59,6 +62,8 @@ public class SignUpController{
 
     @FXML
     void initialize() {
+
+
         signUpButton.setOnAction(event -> {
             User newUser = new User(signUpFirstname.getText(),signUpLastname.getText(),
                                                     signUpUsername.getText(),signUpPassword.getText());
@@ -66,8 +71,21 @@ public class SignUpController{
             boolean createUsersTable = udb.createUsersTable();
             if (createUsersTable){
                 boolean save = udb.save(newUser);
-                if (save)
+                if (save) {
                     failedOrSuccess.setText("SUCCESS");
+                    try {
+                        loginController = LoginController.getInstance();
+                        loginController.setCurrentUsername(signUpUsername.getText());
+                        loginController.setCurrentUserPassword(signUpPassword.getText());
+                        root = FXMLLoader.load(getClass().getResource("/com/creativehazio/view/add_slices.fxml"));
+                        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        scene = new Scene(root);
+                        stage.setScene(scene);
+                        stage.show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
                 else
                     failedOrSuccess.setText("FAILED");
             }else
@@ -85,6 +103,15 @@ public class SignUpController{
         setupDatabaseBtn.setOnAction(event -> {
             try {
                 root = FXMLLoader.load(getClass().getResource("/com/creativehazio/view/database_setup.fxml"));
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }catch (IOException e){}
+        });
+        howToUse.setOnAction(event->{
+            try {
+                root = FXMLLoader.load(getClass().getResource("/com/creativehazio/view/about.fxml"));
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);

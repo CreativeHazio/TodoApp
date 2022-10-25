@@ -34,16 +34,11 @@ public class UserDatabase implements UserDAOInterface {
     }
 
     @Override
-    public void getAllUsers() {
-
-    }
-
-    @Override
     public boolean createUsersTable() {
         try {
             Connection conn = DatabaseConnector.getConn();
             PreparedStatement pst = conn.prepareStatement("CREATE TABLE users" +
-                      "(ID INT, FIRSTNAME VARCHAR(50), LASTNAME VARCHAR(50), USERNAME VARCHAR(50), PASSWORD VARCHAR(50))");
+                    "(ID INT, FIRSTNAME VARCHAR(50), LASTNAME VARCHAR(50), USERNAME VARCHAR(50), PASSWORD VARCHAR(50))");
             pst.execute();
             System.out.println("Users table has been added");
             return true;
@@ -80,12 +75,18 @@ public class UserDatabase implements UserDAOInterface {
     }
 
     @Override
-    public void update(User user) {
-
-    }
-
-    @Override
     public boolean deleteByID(long id) {
         return false;
     }
+//    @Override
+//    public void getAllUsers() {
+
+//
+
+//    }
+//    @Override
+//    public void update(User user) {
+//
+//    }
+//
 }

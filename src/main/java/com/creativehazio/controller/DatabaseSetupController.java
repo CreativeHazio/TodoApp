@@ -4,6 +4,9 @@ import com.creativehazio.database.DB;
 import com.creativehazio.database.DatabaseConnector;
 import com.creativehazio.database.DatabaseDAO;
 import com.creativehazio.database.DatabaseDB;
+import com.creativehazio.user.User;
+import com.creativehazio.user.UserDAOInterface;
+import com.creativehazio.user.UserDatabase;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -19,6 +22,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
 public class DatabaseSetupController {
@@ -26,6 +31,8 @@ public class DatabaseSetupController {
     private DatabaseConnector databaseConnector;
     private DatabaseDAO databaseDB;
     private DB dbModel;
+    private UserDAOInterface udb;
+    private LoginController loginController;
 
     private Parent root;
     private Stage stage;
@@ -108,13 +115,45 @@ public class DatabaseSetupController {
             }catch (IOException e){}
         });
         connectWithDatabaseID.setOnAction(event -> {
+            udb = new UserDatabase();
             databaseDB = new DatabaseDB();
+            String loginUsername = "";
+            String loginPassword = "";
+
             String databaseid = databaseID.getText();
             int dbID = Integer.parseInt(databaseid);
             DB db = databaseDB.getByID(dbID);
 
             if (db != null){
                 databaseIDisSuccess.setText("Connected");
+
+                try {
+                    Connection conn = DatabaseConnector.getConn();
+                    PreparedStatement pst = conn.prepareStatement("SELECT * FROM users");
+                    ResultSet rs = pst.executeQuery();
+
+                    while (rs.next()){
+                        loginUsername = rs.getString("username");
+                        loginPassword = rs.getString("password");
+                    }
+                }catch (Exception e){
+                    System.out.println(e.getMessage());
+                }
+
+                User previousUser = udb.getUser(loginUsername,loginPassword);
+
+                if (previousUser!=null){
+                    try {
+                        loginController = LoginController.getInstance();
+                        loginController.setCurrentUsername(loginUsername);
+                        loginController.setCurrentUserPassword(loginPassword);
+                        root = FXMLLoader.load(getClass().getResource("/com/creativehazio/view/add_slices.fxml"));
+                        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        scene = new Scene(root);
+                        stage.setScene(scene);
+                        stage.show();
+                    }catch (IOException e){}
+                }
             }else
                 databaseIDisSuccess.setText("Failed");
         });

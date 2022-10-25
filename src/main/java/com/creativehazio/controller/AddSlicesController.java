@@ -53,6 +53,9 @@ public class AddSlicesController {
     private Label isSaved;
 
     @FXML
+    private TextArea title;
+
+    @FXML
     private TextArea slices;
 
     @FXML
@@ -62,7 +65,7 @@ public class AddSlicesController {
             sdb = new SlicesDatabase();
             loginController = LoginController.getInstance();
 
-            Slices slice = new Slices("Todo", Date.valueOf(LocalDate.now()), Time.valueOf(LocalTime.now()),slices.getText());
+            Slices slice = new Slices(title.getText(), Date.valueOf(LocalDate.now()), Time.valueOf(LocalTime.now()),slices.getText());
             boolean saveSlice = sdb.save(slice,udb.getUser(loginController.getCurrentUsername(),loginController.getCurrentUserPassword()));
             long id = 0;
             while (!saveSlice) {
@@ -72,10 +75,11 @@ public class AddSlicesController {
                 if (saveSlice){
                     slices.setText("");
                     isSaved.setText("Saved");
+
                 }else
                     isSaved.setText("Failed");
             }
-//            TODO: Set allSlices TextArea with slices and Clear slices TextArea after successful save..... slices.setText("");
+
         });
         allSlices.setOnAction(event -> {
             try {

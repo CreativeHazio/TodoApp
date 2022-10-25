@@ -1,0 +1,19 @@
+First of all, making this app was a challenge to me as i was not that good in using javafx,
+But that's a lame excuse because i am a programmer i've got my buddies (Google and StackOverflow)
+I started programming because i wanted to be a mobile dev, i had to learn javafx because my system can't run
+Android studio and i was very desperate to start making apps.
+
+PROBLEMS I FACED AND HOW I SOLVED THEM:
+
+1. The first problem i faced was how to make the database connection info not to be hard coded. I copied a
+Database connection class from stackoverflow that had to be hard-coded, but after a lot of researching
+i found out about singleton classes and i used the concept to modify my Database connector class
+
+2. Another issue i faced was how to share current user instance among my classes, Singleton model came to
+the rescue again. (check LOGINCONTROLLER)
+
+3. The last issue i faced that made me left this project for almost two months was how to get all my previous
+todos to appear on my ALLSLICES page into a listview.. I later realized i couldn't do it and shouldn't force
+myself since im not a javafx developer but a mobile app developer, So i solved it by searching through all the
+slices in the database and adding it to my ALLSLICES page as a string file.
+

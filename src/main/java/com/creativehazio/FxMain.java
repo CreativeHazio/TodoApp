@@ -6,10 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 public class FxMain extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/creativehazio/view/sign_up.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().
+                getResource("/com/creativehazio/view/sign_up.fxml")));
         primaryStage.setTitle("ORANGE");
         primaryStage.setY(50);
         primaryStage.setScene(new Scene(root,600,400));

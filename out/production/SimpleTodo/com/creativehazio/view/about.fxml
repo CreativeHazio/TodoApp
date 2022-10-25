@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="428.0" prefWidth="662.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.creativehazio.controller.AboutController">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="64.0" prefHeight="364.0" prefWidth="662.0">
+         <content>
+            <TextArea editable="false" prefHeight="362.0" prefWidth="662.0" text="ORANGE&#10;An app to store your todos a.k.a SLICES&#10;&#10;*To get started you have to register your database with url (e.g jdbc:mysql://localhost:3306/Todo if you are using a MySQL Server), root (Usually it is named root) and your database password&#10;&#10;You will be given an ID if your database connection was successful, This ID will be used to setup up your database automatically everytime you want to login (You must setup DB before every login), If you forget your ID just register it up manually again(You will be given a new ID) then Login.&#10;&#10;If your database setup was successful, go ahead and sign up&#10;&#10;If your login was successful, You can add in your todos by writing in the text area and pressing the cross button&#10;&#10;Check for all your previous slices by clicking on the ALL SLICES button on the top right corner " wrapText="true">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextArea>
+         </content>
+      </ScrollPane>
+      <Button fx:id="backToSignUp" layoutX="26.0" layoutY="19.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="81.0" style="-fx-background-color: white;" text="Back">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
